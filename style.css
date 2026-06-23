@@ -738,3 +738,82 @@ footer a {
     margin-top: 0;
   }
 }
+:root {
+  --green-deep: #2e5aa7;
+  --green: #2e5aa7;
+  --sage: #a8b59f;
+  --beige: #fff8e1;
+  --cream: #fffaf0;
+  --brown: #5a4634;
+  --brown-soft: #7d6b5c;
+  --white: #ffffff;
+  --dress-bg: #f5f9ff;
+  --sicily-yellow: #f6c43c;
+  --sicily-blue: #2e5aa7;
+  --sea-blue: #86c5ff;
+}
+
+.primary-btn,
+.secondary-btn,
+.primary-form-btn {
+  background: var(--sicily-blue);
+  color: var(--white);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.primary-form-btn:hover {
+  background: var(--sicily-yellow);
+  color: var(--sicily-blue);
+}
+
+.countdown strong,
+h2,
+.section-kicker,
+.card span,
+.card h3,
+.dress-swatch h3,
+.form-step h3,
+.success-message h3 {
+  color: var(--sicily-blue);
+}
+
+.progress span,
+.choice-grid input:checked + span {
+  background: var(--sicily-blue);
+  border-color: var(--sicily-blue);
+}
+
+.card {
+  background: #fffdf7;
+}
+
+.details,
+.rsvp {
+  background: #fff8e1;
+}
+
+.dresscode {
+  background: #f5f9ff;
+}
+
+footer {
+  background: var(--sicily-blue);
+}
+
+.swatch-circle.sage {
+  background: #a8b59f;
+}
+
+.swatch-circle.oatmeal {
+  background: #d8cfbe;
+}
+
+.swatch-circle.sea {
+  background: #86c5ff;
+}
+
+.swatch-circle.ivory {
+  background: #fbf8f0;
+  border-color: rgba(46, 90, 167, .25);
+}
