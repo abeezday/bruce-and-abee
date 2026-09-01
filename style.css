@@ -445,7 +445,71 @@ h2 {
 .address {
   font-size: 18px;
 }
+.venue-en {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: var(--brown-soft);
+  margin: 2px 0 0;
+}
 
+.time-schedule {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 10px;
+}
+
+.time-item {
+  text-align: center;
+}
+
+.time-item h3 {
+  margin: 0 0 2px;
+}
+
+.time-item p {
+  margin: 0;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.time-item em {
+  margin-left: 4px;
+  color: var(--brown-soft);
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+}
+
+.location-info {
+  margin: 24px auto 36px;
+  text-align: center;
+}
+
+.location-info h3 {
+  margin: 0;
+  color: var(--olive-deep);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.location-en {
+  margin: 2px 0 14px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  color: var(--brown-soft);
+}
+
+.location-address {
+  margin: 0 0 16px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.location-address span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  color: var(--brown-soft);
+}
 /* =========================
    DRESS CODE
 ========================= */
