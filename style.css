@@ -369,6 +369,20 @@ h2 {
   margin: 0 0 6px;
 }
 
+.invitation-zh {
+  margin-bottom: 30px;
+}
+
+.invitation-en {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--brown-soft);
+}
+
+.invitation-en p {
+  margin: 0 0 4px;
+}
 /* =========================
    DETAILS
 ========================= */
