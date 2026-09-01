@@ -987,28 +987,33 @@ textarea {
   font-size: 20px;
 }
 
-.success-copy {
+.success-zh {
+  margin-top: 30px;
+}
+
+.success-zh p {
   margin: 0;
-
   font-size: 20px;
-
-  color: var(--brown);
-
   line-height: 1.7;
+  color: var(--brown);
 }
 
 .success-date {
-  margin: 0;
-
-  font-size: 20px;
-
   font-weight: 700;
+}
 
-  color: var(--brown);
+.success-en {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(63, 74, 53, .12);
+}
 
-  line-height: 1.7;
-
-  letter-spacing: .02em;
+.success-en p {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--brown-soft);
 }
 
 /* =========================
