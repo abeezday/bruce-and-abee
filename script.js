@@ -255,56 +255,50 @@ if (document.readyState === "loading") {
    WEDDING MUSIC
 ========================= */
 
-const musicWelcome = document.getElementById("musicWelcome");
-const weddingMusic = document.getElementById("weddingMusic");
-const playMusicBtn = document.getElementById("playMusicBtn");
-const skipMusicBtn = document.getElementById("skipMusicBtn");
+function initWeddingMusic() {
+  const musicWelcome = document.getElementById("musicWelcome");
+  const weddingMusic = document.getElementById("weddingMusic");
+  const playMusicBtn = document.getElementById("playMusicBtn");
+  const skipMusicBtn = document.getElementById("skipMusicBtn");
 
-function closeMusicWelcome() {
-  if (!musicWelcome) return;
+  if (
+    !musicWelcome ||
+    !weddingMusic ||
+    !playMusicBtn ||
+    !skipMusicBtn
+  ) {
+    return;
+  }
 
-  musicWelcome.classList.add("hide");
+  function closeMusicWelcome() {
+    musicWelcome.classList.add("hide");
 
-  setTimeout(() => {
-    musicWelcome.style.display = "none";
-  }, 450);
-}
-
-if (
-  musicWelcome &&
-  weddingMusic &&
-  playMusicBtn &&
-  skipMusicBtn
-) {
+    setTimeout(() => {
+      musicWelcome.style.display = "none";
+    }, 450);
+  }
 
   playMusicBtn.addEventListener("click", async () => {
+    playMusicBtn.disabled = true;
 
     try {
-
       weddingMusic.volume = 0.35;
-
       await weddingMusic.play();
-
     } catch (error) {
-
-      console.log(
-        "Music playback was blocked:",
-        error
-      );
-
+      console.error("Unable to play wedding music:", error);
     }
 
     closeMusicWelcome();
-
   });
-
 
   skipMusicBtn.addEventListener("click", () => {
-
     weddingMusic.pause();
-
     closeMusicWelcome();
-
   });
+}
 
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initWeddingMusic);
+} else {
+  initWeddingMusic();
 }
