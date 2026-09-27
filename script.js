@@ -101,25 +101,35 @@ function initRsvpForm() {
   }
 
   function updateConditionalFields() {
-    const attending = isAttending();
-    const invitation = getRadioValue("invitation");
+  const attending = isAttending();
 
-    if (attendingFields) {
-      attendingFields.style.display = attending ? "block" : "none";
-    }
-
-    if (step3Title) {
-      step3Title.textContent = attending ? "出席資訊" : "留下祝福";
-    }
-
-    if (emailField) {
-      emailField.classList.toggle("show", attending && invitation.includes("digital"));
-    }
-
-    if (addressField) {
-      addressField.classList.toggle("show", attending && invitation.includes("wedding invitation card"));
-    }
+  if (attendingFields) {
+    attendingFields.style.display = attending ? "block" : "none";
   }
+
+  if (step3Title) {
+    step3Title.textContent = attending ? "出席資訊" : "留下祝福";
+  }
+
+  const invitation = getRadioValue("invitation");
+
+  const needsEmail =
+    attending &&
+    (
+      invitation.includes("Digital invitation") ||
+      invitation.includes("Digital and printed")
+    );
+
+  const needsAddress =
+    attending &&
+    (
+      invitation.includes("Printed invitation") ||
+      invitation.includes("Digital and printed")
+    );
+
+  emailField.classList.toggle("show", needsEmail);
+  addressField.classList.toggle("show", needsAddress);
+}
 
   function setStep(step) {
     currentStep = step;
