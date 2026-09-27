@@ -264,3 +264,61 @@ function startWeddingMusic() {
 
 document.addEventListener("click", startWeddingMusic);
 document.addEventListener("touchstart", startWeddingMusic);
+
+/* =========================
+   WEDDING MUSIC
+========================= */
+
+const musicWelcome = document.getElementById("musicWelcome");
+const weddingMusic = document.getElementById("weddingMusic");
+const playMusicBtn = document.getElementById("playMusicBtn");
+const skipMusicBtn = document.getElementById("skipMusicBtn");
+
+function closeMusicWelcome() {
+  if (!musicWelcome) return;
+
+  musicWelcome.classList.add("hide");
+
+  setTimeout(() => {
+    musicWelcome.style.display = "none";
+  }, 450);
+}
+
+if (
+  musicWelcome &&
+  weddingMusic &&
+  playMusicBtn &&
+  skipMusicBtn
+) {
+
+  playMusicBtn.addEventListener("click", async () => {
+
+    try {
+
+      weddingMusic.volume = 0.35;
+
+      await weddingMusic.play();
+
+    } catch (error) {
+
+      console.log(
+        "Music playback was blocked:",
+        error
+      );
+
+    }
+
+    closeMusicWelcome();
+
+  });
+
+
+  skipMusicBtn.addEventListener("click", () => {
+
+    weddingMusic.pause();
+
+    closeMusicWelcome();
+
+  });
+
+}
