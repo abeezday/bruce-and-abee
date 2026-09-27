@@ -249,3 +249,18 @@ if (document.readyState === "loading") {
 } else {
   initRsvpForm();
 }
+
+const bgMusic = document.getElementById("bgMusic");
+
+function startWeddingMusic() {
+  if (!bgMusic) return;
+
+  bgMusic.volume = 0.35;
+  bgMusic.play().catch(() => {});
+
+  document.removeEventListener("click", startWeddingMusic);
+  document.removeEventListener("touchstart", startWeddingMusic);
+}
+
+document.addEventListener("click", startWeddingMusic);
+document.addEventListener("touchstart", startWeddingMusic);
