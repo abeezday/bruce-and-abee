@@ -520,9 +520,9 @@ h2 {
 
 .dresscode-palette {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
-  width: min(980px, 100%);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  width: min(1080px, 100%);
   margin: 38px auto 0;
 }
 
@@ -543,32 +543,42 @@ h2 {
     0 12px 30px rgba(63, 40, 24, .08);
 }
 
-/* Espresso */
+/* 深咖啡色 / Espresso */
 .swatch-circle.espresso {
   background: #3F2818;
 }
 
-/* Taupe */
+/* 淺咖啡色 / Taupe */
 .swatch-circle.taupe {
   background: #9B826C;
 }
 
-/* Sand */
+/* 沙岩米 / Sand */
 .swatch-circle.sand {
   background: #CEBFAC;
 }
 
-/* Ivory */
+/* 象牙白 / Ivory */
 .swatch-circle.ivory {
   background: #F6E6D6;
   border-color: rgba(63, 40, 24, .18);
 }
 
-/* Sage */
+/* 鼠尾草綠 / Sage */
 .swatch-circle.sage {
   background: #969786;
 }
 
+/* 典雅白 / White */
+.swatch-circle.white {
+  background: #FFFFFF;
+  border-color: rgba(63, 40, 24, .24);
+
+  box-shadow:
+    inset 0 0 0 5px rgba(246, 230, 214, .35),
+    0 12px 30px rgba(63, 40, 24, .08);
+}
+
 .dress-swatch h3 {
   margin: 0 0 2px;
   color: var(--olive-deep);
@@ -583,34 +593,6 @@ h2 {
   font-size: 18px;
   font-style: italic;
 }
-  border-color: rgba(63, 74, 53, .25);
-}
-
-.dress-swatch h3 {
-  margin: 0 0 2px;
-
-  color: var(--olive-deep);
-
-  font-size: 19px;
-
-  font-weight: 600;
-}
-
-.dress-swatch p {
-  margin: 0;
-
-  color: var(--brown-soft);
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 18px;
-
-  font-style: italic;
-}
-
-/* =========================
-   MAP
-========================= */
 
 .map {
   width: min(980px, 100%);
