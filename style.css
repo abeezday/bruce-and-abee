@@ -79,7 +79,6 @@ a {
   top: 26px;
   left: 50%;
   transform: translateX(-50%);
-
   z-index: 2;
 
   display: flex;
@@ -325,9 +324,7 @@ h2 {
 
 .section-inner {
   width: min(1080px, 100%);
-
   margin: 0 auto;
-
   text-align: center;
 }
 
@@ -383,6 +380,7 @@ h2 {
 .invitation-en p {
   margin: 0 0 4px;
 }
+
 /* =========================
    DETAILS
 ========================= */
@@ -445,6 +443,14 @@ h2 {
 .address {
   font-size: 18px;
 }
+
+.card em {
+  margin-left: 4px;
+  color: var(--brown-soft);
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+}
+
 .venue-en {
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
@@ -452,33 +458,9 @@ h2 {
   margin: 2px 0 0;
 }
 
-.time-schedule {
-  display: flex;
-  justify-content: center;
-  gap: 36px;
-  margin-top: 10px;
-}
-
-.time-item {
-  text-align: center;
-}
-
-.time-item h3 {
-  margin: 0 0 2px;
-}
-
-.time-item p {
-  margin: 0;
-  font-size: 16px;
-  white-space: nowrap;
-}
-
-.time-item em {
-  margin-left: 4px;
-  color: var(--brown-soft);
-  font-family: "Cormorant Garamond", serif;
-  font-style: normal;
-}
+/* =========================
+   LOCATION
+========================= */
 
 .location-info {
   margin: 24px auto 36px;
@@ -510,6 +492,7 @@ h2 {
   font-size: 17px;
   color: var(--brown-soft);
 }
+
 /* =========================
    DRESS CODE
 ========================= */
@@ -543,33 +526,27 @@ h2 {
     0 12px 30px rgba(63, 40, 24, .08);
 }
 
-/* 深咖啡色 / Espresso */
 .swatch-circle.espresso {
   background: #3F2818;
 }
 
-/* 淺咖啡色 / Taupe */
 .swatch-circle.taupe {
   background: #9B826C;
 }
 
-/* 沙岩米 / Sand */
 .swatch-circle.sand {
   background: #CEBFAC;
 }
 
-/* 象牙白 / Ivory */
 .swatch-circle.ivory {
   background: #F6E6D6;
   border-color: rgba(63, 40, 24, .18);
 }
 
-/* 鼠尾草綠 / Sage */
 .swatch-circle.sage {
   background: #969786;
 }
 
-/* 典雅白 / White */
 .swatch-circle.white {
   background: #FFFFFF;
   border-color: rgba(63, 40, 24, .24);
@@ -593,6 +570,10 @@ h2 {
   font-size: 18px;
   font-style: italic;
 }
+
+/* =========================
+   MAP
+========================= */
 
 .map {
   width: min(980px, 100%);
@@ -959,7 +940,9 @@ textarea {
 
 .success-message {
   display: none;
+
   text-align: center;
+
   padding: 40px 0 20px;
 }
 
@@ -973,8 +956,11 @@ textarea {
 
 .success-zh p {
   margin: 0;
+
   font-size: 20px;
+
   line-height: 1.7;
+
   color: var(--brown);
 }
 
@@ -984,15 +970,21 @@ textarea {
 
 .success-en {
   margin-top: 28px;
+
   padding-top: 0;
+
   border-top: none;
 }
 
 .success-en p {
   margin: 0;
+
   font-family: "Cormorant Garamond", serif;
+
   font-size: 20px;
+
   line-height: 1.7;
+
   color: var(--brown-soft);
 }
 
@@ -1020,6 +1012,155 @@ footer p {
 
 footer a {
   opacity: .76;
+}
+
+/* =========================
+   MUSIC WELCOME
+========================= */
+
+.music-welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(247, 243, 235, .96);
+
+  backdrop-filter: blur(14px);
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease;
+}
+
+.music-welcome.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.music-welcome-card {
+  width: min(520px, 100%);
+
+  text-align: center;
+}
+
+.music-monogram {
+  margin: 0 0 28px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(52px, 7vw, 76px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: var(--olive-deep);
+}
+
+.music-welcome-kicker {
+  margin: 0 0 30px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  text-transform: uppercase;
+
+  letter-spacing: .16em;
+
+  color: var(--brown-soft);
+}
+
+.music-copy {
+  margin: 0 0 12px;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  color: var(--brown);
+}
+
+.music-copy-en {
+  margin: 0 0 34px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  color: var(--brown-soft);
+}
+
+.music-play-btn,
+.music-skip-btn {
+  font-family: "Noto Serif TC", serif;
+
+  cursor: pointer;
+}
+
+.music-play-btn {
+  display: block;
+
+  width: min(300px, 100%);
+
+  margin: 0 auto;
+
+  padding: 14px 24px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: var(--olive-deep);
+
+  color: var(--white);
+
+  font-size: 16px;
+
+  letter-spacing: .04em;
+
+  box-shadow:
+    0 12px 28px rgba(63, 74, 53, .16);
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.music-play-btn:hover {
+  background: var(--olive);
+
+  transform: translateY(-1px);
+}
+
+.music-skip-btn {
+  display: block;
+
+  margin: 18px auto 0;
+
+  padding: 6px 12px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--brown-soft);
+
+  font-size: 14px;
+
+  letter-spacing: .03em;
 }
 
 /* =========================
@@ -1077,7 +1218,6 @@ footer a {
   .hero {
     min-height: 86vh;
 
-    /* 手機人物構圖 */
     background-position: 48% center;
   }
 
@@ -1176,5 +1316,22 @@ footer a {
 
   footer {
     margin-top: 0;
+  }
+
+  .music-welcome {
+    padding: 28px 24px;
+  }
+
+  .music-monogram {
+    font-size: 52px;
+  }
+
+  .music-welcome-kicker {
+    font-size: 16px;
+  }
+
+  .music-copy,
+  .music-copy-en {
+    font-size: 17px;
   }
 }
