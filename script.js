@@ -302,3 +302,60 @@ if (document.readyState === "loading") {
 } else {
   initWeddingMusic();
 }
+/* =========================
+   VISITOR COUNTER
+========================= */
+
+function loadVisitorCounter() {
+  const visitorNumber = document.getElementById("visitorNumber");
+  const todayVisits = document.getElementById("todayVisits");
+  const totalVisits = document.getElementById("totalVisits");
+
+  if (!visitorNumber || !todayVisits || !totalVisits) {
+    return;
+  }
+
+  const today = new Date().toLocaleDateString("en-CA", {
+    timeZone: "Asia/Taipei"
+  });
+
+  const storageKey = "bruceAbeeVisitDate";
+  const lastVisit = localStorage.getItem(storageKey);
+
+  const shouldCount = lastVisit !== today;
+
+  const callbackName =
+    "visitorCallback_" + Date.now();
+
+  window[callbackName] = function(data) {
+    visitorNumber.textContent =
+      data.visitorNumber || "000000";
+
+    todayVisits.textContent =
+      data.today ?? "0";
+
+    totalVisits.textContent =
+      data.total ?? "0";
+
+    if (shouldCount) {
+      localStorage.setItem(storageKey, today);
+    }
+
+    delete window[callbackName];
+
+    script.remove();
+  };
+
+  const script = document.createElement("script");
+
+  script.src =
+    APPS_SCRIPT_URL +
+    "?count=" +
+    (shouldCount ? "1" : "0") +
+    "&callback=" +
+    callbackName;
+
+  document.body.appendChild(script);
+}
+
+window.addEventListener("load", loadVisitorCounter);
